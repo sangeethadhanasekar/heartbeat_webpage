@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <link rel = "icon"  type = "images/ico" href ="/favicon.ico" />
+
+    <meta charset="UTF-8">
+    <title> heart care</title>
+
+    <link href="{{url_for('static', filename='css/page1.css') }}" rel="stylesheet">
+
+
+</head>
+<body>
+  <div class="bg-image"></div>
+   <center><h1>*HEART BEAT PER MINUTE(BPM)*</h1>
+          <h1>CALCULATOR</h1>
+   </center>
+   <br>
+   <center>
+     <h2>Calculate your heart beat per minute in easy two steps!</h2>
+   <P>hover over the below image to view "The steps to record the video"</P>
+
+   <div class="dropdown">
+   <img src="https://i2.wp.com/www.smartprix.com/bytes/wp-content/uploads/2018/03/Screenshot_20180316-075039_My-BP-Lab.jpg?resize=696%2C476&ssl=1" alt="guide to record the video " width="200" height="100">
+   <div class="dropdown-content">
+          <img src="https://i2.wp.com/www.smartprix.com/bytes/wp-content/uploads/2018/03/Screenshot_20180316-075039_My-BP-Lab.jpg?resize=696%2C476&ssl=1" alt="guide to record the video " width="500" height="400">
+       <div class="desc"><ol>
+           <h3>The steps to record the video:</h3>
+           <li>open camera</li>
+           <li>place your finger infront of back camera as shown above</li>
+           <li>turn on falsh</li>
+           <li>record 10 seconds video and store it  </li>
+           <li>upload the video in the below mentioned area to calculate bpm</li>
+       </ol></div>
+       </div>
+   </div>
+   </center>
+    <h1>step:1</h1>
+   <h3>Upload the video(10 seconds to 20 seconds).</h3>
+   <form  action ="/" method = "POST"
+         enctype = "multipart/form-data">
+    <div class="video">
+         <label class="new_button" for="video">select video:</label>
+         <input type="file" id="video" name="video" accept="video/* ">
+         <input type="submit" value="upload">
+    </div>
+   </form>
+
+<h1>step:2</h1>
+   {% if bpm %}
+     <h3>your apporx. heart beat per minute is: </h3>
+  <div class="answer">    "  {{ bpm }}  "    </div>
+   {% endif %}
+</body>
+</html>
